@@ -1,18 +1,29 @@
 <template>
-  <div class="home">
-    <img alt="Vue logo" src="../assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div class="tile is-ancestor">
+    <div class="tile"></div>
+    <ul class="tile is-8 is-parent is-vertical">
+      <li class="tile is-child"
+        v-for="(item) in list"
+        :key="item.id">
+        <BaseArticle :options="item"/>
+      </li>
+    </ul>
+    <div class="tile"></div>
   </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue'
-
+import BaseArticle from '@/components/BaseArticle'
+import { mapGetters } from 'vuex'
 export default {
   name: 'Home',
   components: {
-    HelloWorld
+    BaseArticle
+  },
+  computed: {
+    ...mapGetters({
+      list: 'getList'
+    })
   }
 }
 </script>
