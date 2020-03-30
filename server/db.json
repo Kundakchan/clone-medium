@@ -1,36 +1,21 @@
 {
   "users": [
     {
-      "id": 1,
-      "login": "writer@mail.com",
-      "password": 123456,
+      "id": "_5ed85e391aa36",
+      "login": "user@ya.ru",
+      "password": "q1w2e3r4t5y6u7i8o9p0",
       "role": "writer"
-    },
-    {
-      "id": 2,
-      "login": "reader@mail.com",
-      "password": 123456,
-      "role": "reader"
     }
   ],
   "posts": [
     {
-      "id": "1cb4a32",
-      "title": "title",
-      "description": "message",
-      "claps": 5,
-      "createdAt": "2020-03-24T20:17:36.890Z",
-      "updateAt": "2020-03-28T18:29:49.372Z",
-      "userId": 1
-    },
-    {
-      "id": "4e3bd8d",
-      "title": "title 10 jjjj",
-      "description": "message",
+      "id": "e58a3d",
+      "title": "new article",
+      "description": "my message",
       "claps": 0,
-      "createdAt": "2020-03-24T20:17:43.370Z",
-      "updateAt": "2020-03-28T18:29:58.252Z",
-      "userId": 1
+      "createdAt": "2020-03-30T14:31:48.652Z",
+      "updateAt": null,
+      "userId": "_5ed85e391aa36"
     }
   ]
 }

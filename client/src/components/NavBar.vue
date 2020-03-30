@@ -27,6 +27,15 @@
             Войти
           </b-button>
           <b-button
+            v-if="!user"
+            tag="router-link"
+            rounded
+            to="/registration"
+            type="is-dark"
+            icon-right="account-plus">
+            Регистрацыя
+          </b-button>
+          <b-button
             v-if="user"
             @click="logOut"
             rounded

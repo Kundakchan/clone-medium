@@ -29,7 +29,7 @@
           :message="{
             'Пароль должен иметь 6 и более символом': !$v.password.minLength
           }"
-          label="Password">
+          label="Пароль">
           <b-input
             :use-html5-validation="false"
             v-model.trim.lazy="password"

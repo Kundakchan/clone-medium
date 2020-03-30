@@ -56,6 +56,15 @@ export default {
       throw error
     }
   },
+  async USER_REGISTRATION ({ commit }, payload) {
+    try {
+      const response = await HTTP.post('users/', payload)
+      commit('setUser', response.data)
+    } catch (error) {
+      console.error(error.message)
+      throw error
+    }
+  },
   async LOGOUT ({ commit }) {
     try {
       commit('deleteUser')
