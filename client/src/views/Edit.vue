@@ -16,13 +16,15 @@
           <h1 v-if="id" class="is-size-4 is-uppercase">Редактировать статью</h1>
         </div>
         <div class="edit__button-box">
-          <b-button
-            @click="create"
-            v-if="id"
-            class="edit-round"
-            type="is-dark"
-            icon-left="plus">
-          </b-button>
+          <transition name="add__article">
+            <b-button
+              @click="create"
+              v-if="id"
+              class="edit-round"
+              type="is-dark"
+              icon-left="plus">
+            </b-button>
+          </transition>
         </div>
       </div>
       <div class="edit-content box has-background-light">
@@ -83,5 +85,22 @@ export default {
 }
 .edit-content {
   height: 90%;
+}
+.add__article-leave-active {
+  animation: button .3s reverse;
+}
+.add__article-enter-active {
+  animation: button .3s;
+}
+@keyframes button {
+  0% {
+    transform: scale(0);
+  }
+  50% {
+    transform: scale(1.2);
+  }
+  100% {
+    transform: scale(1);
+  }
 }
 </style>
