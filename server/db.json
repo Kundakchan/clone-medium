@@ -9,11 +9,11 @@
   ],
   "posts": [
     {
-      "id": "e58a3d",
-      "title": "new article",
-      "description": "my message",
+      "id": "3e18229",
+      "title": "Новая статья",
+      "description": "Содержимое",
       "claps": 0,
-      "createdAt": "2020-03-30T14:31:48.652Z",
+      "createdAt": "2020-03-30T15:15:17.146Z",
       "updateAt": null,
       "userId": "_5ed85e391aa36"
     }

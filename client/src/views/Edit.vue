@@ -17,12 +17,6 @@
         </div>
         <div class="edit__button-box">
           <b-button
-            v-if="!id"
-            class="edit-round"
-            type="is-dark"
-            icon-left="pencil">
-          </b-button>
-          <b-button
             @click="create"
             v-if="id"
             class="edit-round"

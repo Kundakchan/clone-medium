@@ -1,13 +1,12 @@
 <template>
   <span class="level">
     <span class="level-left">
-      <span class="level-item is-size-7 has-text-grey-light">Добавлено: </span>
+      <span class="level-item is-size-7 has-text-grey-light">Добавлено:</span>
       <time
         class="level-item is-size-7 has-text-grey-light"
         :datetime="dateCreated">
         {{ create }}
       </time>
-      <span class="level-item is-size-7 has-text-grey-light">дня назад </span>
     </span>
     <span class="level-right">
       <span class="level-item">
@@ -80,8 +79,8 @@ export default {
       this.ADD_LIKE(this.article)
     },
     deyCreated (date) {
-      const days = (Date.now() - Date.parse(date)) / 86400000
-      return Math.round(days)
+      const time = new Date(date)
+      return `${time.getDate()}.${time.getMonth() + 1}.${time.getFullYear()} ${time.getHours()}:${time.getMinutes()}`
     }
   },
   created () {
