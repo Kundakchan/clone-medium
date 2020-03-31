@@ -9,5 +9,8 @@ export default {
   getUser: state => state.user,
   checUser: state => state.user !== null,
   checReader: state => state.user.role === 'reader',
-  checWriter: state => state.user.role === 'writer'
+  checWriter: state => state.user.role === 'writer',
+  getArticlesUser: state => id => {
+    return state.list.filter(item => item.userId === id)
+  }
 }

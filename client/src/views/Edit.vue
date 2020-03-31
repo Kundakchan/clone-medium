@@ -40,6 +40,7 @@
 
 <script>
 import BaseEditForm from '@/components/BaseEditForm'
+import { mapGetters } from 'vuex'
 export default {
   props: {
     id: String
@@ -51,8 +52,12 @@ export default {
     return {}
   },
   computed: {
+    ...mapGetters([
+      'getArticlesUser',
+      'getUser'
+    ]),
     miniLlist () {
-      return this.$store.getters.getList
+      return this.getArticlesUser(this.getUser.id)
     }
   },
   methods: {
