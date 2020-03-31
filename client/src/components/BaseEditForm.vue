@@ -10,8 +10,10 @@
     </div>
     <div class="edit__footer">
       <div class="buttons">
-        <b-button v-if="id" @click="updateArticle" rounded type="is-dark">Сохронить</b-button>
-        <b-button v-if="!id" @click="addArticle" rounded type="is-dark">Публиковать</b-button>
+        <transition name="edit-control" mode="out-in">
+          <b-button v-if="id" key="edit" @click="updateArticle" rounded type="is-dark">Сохронить</b-button>
+          <b-button v-else key="create" @click="addArticle" rounded type="is-dark">Публиковать</b-button>
+        </transition>
       </div>
     </div>
   </form>
@@ -88,5 +90,16 @@ export default {
   height: 100%;
   display: grid;
   grid-template-rows: 1fr auto;
+  row-gap: 20px;
+}
+.edit__body {
+  display: grid;
+  grid-template-rows: auto 1fr;
+}
+.edit-control-leave-active, .edit-control-enter-active {
+  transition: opacity .3s ease;
+}
+.edit-control-enter, .edit-control-leave-to {
+  opacity: 0;
 }
 </style>

@@ -1,19 +1,23 @@
 <template>
   <div class="columns edit-container">
     <div class="column is-3 column_left">
-      <b-message
-        class="mini-article"
-        v-for="(item) in miniLlist"
-        :key="item.id"
-        @click.native="edit(item.id)">
-        <h6 class="is-size-6">{{ item.title }}</h6>
-      </b-message>
+      <transition-group name="list">
+        <b-message
+          class="mini-article"
+          v-for="(item) in miniLlist"
+          :key="item.id"
+          @click.native="edit(item.id)">
+          <h6 class="is-size-6">{{ item.title }}</h6>
+        </b-message>
+      </transition-group>
     </div>
     <div class="column column_right">
       <div class="edit-control box has-background-light">
         <div class="edit__title">
-          <h1 v-if="!id" class="is-size-4 is-uppercase">Создать статью</h1>
-          <h1 v-if="id" class="is-size-4 is-uppercase">Редактировать статью</h1>
+          <transition name="title" mode="out-in">
+            <h1 v-if="id" key="edit" class="is-size-4 is-uppercase">Редактировать статью</h1>
+            <h1 v-else key="create" class="is-size-4 is-uppercase">Создать статью</h1>
+          </transition>
         </div>
         <div class="edit__button-box">
           <transition name="add__article">
@@ -76,7 +80,7 @@ export default {
   padding-top: 10px;
   padding-bottom: 10px;
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 1fr 50px;
   justify-items: center;
   align-items: center;
 }
@@ -86,13 +90,26 @@ export default {
 .edit-content {
   height: 90%;
 }
+// animations
 .add__article-leave-active {
-  animation: button .3s reverse;
+  animation: show-element .3s reverse;
 }
 .add__article-enter-active {
-  animation: button .3s;
+  animation: show-element .3s;
 }
-@keyframes button {
+.title-leave-active, .title-enter-active {
+  transition: opacity .3s ease;
+}
+.title-enter, .title-leave-to {
+  opacity: 0;
+}
+.list-enter-active {
+  animation: bounceInLeft 1s;
+}
+.list-leave-active {
+  animation: bounceInLeft 1s reverse;
+}
+@keyframes show-element {
   0% {
     transform: scale(0);
   }
