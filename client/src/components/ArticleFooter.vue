@@ -12,14 +12,14 @@
       <span class="level-item">
         <div class="buttons">
           <b-button
-            v-if="checUser && checWriter"
+            v-if="checUser && checWriter && editArticle"
             @click="edit"
             icon-right="pencil"
             type="is-dark">
             Изменить
           </b-button>
           <b-button
-            v-if="checUser && checWriter"
+            v-if="checUser && checWriter && editArticle"
             @click="remove"
             icon-right="delete"
             type="is-dark">
@@ -32,6 +32,11 @@
             type="is-dark">
             {{ like }}
           </b-button>
+          <span
+            v-if="!checUser || !editArticle && checWriter">
+            <b-icon icon="thumb-up"></b-icon>
+            {{ like }}
+          </span>
         </div>
       </span>
     </span>
@@ -45,7 +50,8 @@ export default {
     like: Number,
     id: String,
     dateCreated: String,
-    dateUpdate: String
+    dateUpdate: String,
+    editArticle: Boolean
   },
   data () {
     return {

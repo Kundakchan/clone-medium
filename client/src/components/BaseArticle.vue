@@ -7,18 +7,29 @@
       :id="options.id"
       :dateCreated="options.createdAt"
       :dateUpdate="options.updateAt"
+      :editArticle="edit"
     />
   </article>
 </template>
 
 <script>
 import ArticleFooter from '@/components/ArticleFooter'
+import { mapGetters } from 'vuex'
 export default {
   props: {
     options: Object
   },
   components: {
     ArticleFooter
+  },
+  computed: {
+    ...mapGetters([
+      'getUser'
+    ]),
+    edit () {
+      if (this.getUser) return this.options.userId === this.getUser.id
+      else return false
+    }
   }
 }
 </script>

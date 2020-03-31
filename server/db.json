@@ -11,6 +11,12 @@
       "login": "test@ya.ru",
       "password": "123456",
       "role": "writer"
+    },
+    {
+      "id": "_1337b6cb558fb7",
+      "login": "test1@ya.ru",
+      "password": "q1w2e3r4t5y6u7i8o9p0",
+      "role": "reader"
     }
   ],
   "posts": [
@@ -18,25 +24,25 @@
       "id": "3e18229",
       "title": "Новая статья",
       "description": "Содержимое",
-      "claps": 0,
+      "claps": 2,
       "createdAt": "2020-03-30T15:15:17.146Z",
       "updateAt": "2020-03-31T15:20:08.077Z",
       "userId": "_5ed85e391aa36"
     },
     {
       "id": "23b97d0",
-      "title": " my message",
+      "title": " my message 2",
       "description": "discription message",
-      "claps": 0,
+      "claps": 5,
       "createdAt": "2020-03-31T16:41:49.212Z",
-      "updateAt": null,
+      "updateAt": "2020-03-31T17:48:56.322Z",
       "userId": "_1354e8d1b9d93"
     },
     {
       "id": "22a3e85",
       "title": "new title 3",
       "description": "lorem inpusn",
-      "claps": 0,
+      "claps": 4,
       "createdAt": "2020-03-31T17:10:31.477Z",
       "updateAt": null,
       "userId": "_5ed85e391aa36"
