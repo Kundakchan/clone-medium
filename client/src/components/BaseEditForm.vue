@@ -65,13 +65,29 @@ export default {
       }
     },
     addArticle () {
-      this.article.id = Math.floor(Math.random() * 1e8).toString(16)
-      this.article.createdAt = new Date()
-      this.ADD_ARTICLE(this.article)
+      if (this.article.title && this.article.description) {
+        this.article.id = Math.floor(Math.random() * 1e8).toString(16)
+        this.article.createdAt = new Date()
+        this.ADD_ARTICLE(this.article)
+        this.editInit()
+      } else {
+        this.warning('Нельзя публиковать пустую статью !')
+      }
     },
     updateArticle () {
-      this.article.updateAt = new Date()
-      this.UPDATE_ARTICLE(this.article)
+      if (this.article.title && this.article.description) {
+        this.article.updateAt = new Date()
+        this.UPDATE_ARTICLE(this.article)
+      } else {
+        this.warning('Нельзя оставлять пустые поля формы !')
+      }
+    },
+    warning (textMessage) {
+      this.$buefy.snackbar.open({
+        message: textMessage,
+        type: 'is-warning',
+        position: 'is-top'
+      })
     }
   },
   watch: {
