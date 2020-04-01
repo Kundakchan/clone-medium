@@ -20,15 +20,20 @@
           </transition>
         </div>
         <div class="edit__button-box">
-          <transition name="add__article">
-            <b-button
-              @click="create"
-              v-if="id"
-              class="edit-round"
+            <b-tooltip label="Режим создания статьи"
               type="is-dark"
-              icon-left="plus">
-            </b-button>
-          </transition>
+              animated
+              position="is-left">
+              <transition name="add__article">
+                <b-button
+                  @click="create"
+                  v-if="id"
+                  class="edit-round"
+                  type="is-dark"
+                  icon-left="plus">
+                </b-button>
+              </transition>
+            </b-tooltip>
         </div>
       </div>
       <div class="edit-content box has-background-light">

@@ -26,14 +26,14 @@
             Удалить
           </b-button>
           <b-button
-            v-if="checUser && checReader"
+            v-if="checUser && checReader || checUser && !editArticle && checWriter"
             @click="setLike"
             icon-right="thumb-up"
             type="is-dark">
             {{ like }}
           </b-button>
           <span
-            v-if="!checUser || !editArticle && checWriter">
+            v-if="!checUser">
             <b-icon icon="thumb-up"></b-icon>
             {{ like }}
           </span>
