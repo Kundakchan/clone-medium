@@ -78,6 +78,7 @@ export default {
       if (this.article.title && this.article.description) {
         this.article.updateAt = new Date()
         this.UPDATE_ARTICLE(this.article)
+        this.success('Вы успешно обновили статью !')
       } else {
         this.warning('Нельзя оставлять пустые поля формы !')
       }
@@ -86,6 +87,13 @@ export default {
       this.$buefy.snackbar.open({
         message: textMessage,
         type: 'is-warning',
+        position: 'is-top'
+      })
+    },
+    success (textMessage) {
+      this.$buefy.snackbar.open({
+        message: textMessage,
+        type: 'is-success',
         position: 'is-top'
       })
     }
